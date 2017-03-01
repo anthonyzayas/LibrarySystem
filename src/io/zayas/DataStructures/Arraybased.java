@@ -257,32 +257,46 @@ public class Arraybased implements Operations {
             }
         }
     }
-}
-/*
+
     //Quadratic time Complexity (On^2)
     public void sortByGenre(){
-        for(int indexOfMin = 0; indexOfMin < array.size() - 1; indexOfMin++){
-            for(int index = indexOfMin + 1; index < array.size() -1; index ++) {
-                if((array[indexOfMin].getGenre().compareTo(array[index].getGenre()) > 0){
-                    Book value = array[indexOfMin];
-                    array[indexOfMin] = array[index];
-                    array[index] = value;
+        if(size() <= 1){return;}
+        for(int indexOfMin = 0; indexOfMin < size(); indexOfMin++){
+            for(int index = indexOfMin + 1; index < size(); index ++) {
+                if((data[indexOfMin].getGenre().compareTo(data[index].getGenre()) > 0)){
+                    Book value = data[indexOfMin];
+                    data[indexOfMin] = data[index];
+                    data[index] = value;
                 }
             }
         }
     }
 
     //Quadratic time Complexity (On^2)
-    public void sortByAuthor(){
-        for(int indexOfMin = 0; indexOfMin < array.size() - 1; indexOfMin++){
-            for(int index = indexOfMin + 1; index < array.size() -1; index ++) {
-                if((array[indexOfMin].getAuthor().compareTo(array[index].getAuthor()) > 0){
-                    Book value = array[indexOfMin];
-                    array[indexOfMin] = array[index];
-                    array[index] = value;
+    public void sortByAuthor() {
+        if (size() <= 1) {return;}
+        for (int indexOfMin = 0; indexOfMin < size(); indexOfMin++) {
+            for (int index = indexOfMin + 1; index < size(); index++) {
+                if ((data[indexOfMin].getAuthor().compareTo(data[index].getAuthor()) > 0)) {
+                    Book value = data[indexOfMin];
+                    data[indexOfMin] = data[index];
+                    data[index] = value;
                 }
             }
         }
     }
-*/
+
+    public void sortByTitle(){
+        if(size() <= 1){return;}
+        for(int indexOfMin = 0; indexOfMin < size(); indexOfMin++){
+            for(int index = indexOfMin + 1; index < size(); index ++) {
+                if((data[indexOfMin].getTitle().compareTo(data[index].getTitle()) > 0)) {
+                    Book value = data[indexOfMin];
+                    data[indexOfMin] = data[index];
+                    data[index] = value;
+                }
+            }
+        }
+    }
+}
 

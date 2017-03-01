@@ -11,7 +11,7 @@ public class Main {
 
         Arraybased test = new Arraybased(10);
 
-
+        test.add(new LibraryBook("Eragon", "P.K", "Fantasy", 2000));
         LibraryBook obj = new LibraryBook("Harry Potter", "J.K Roling", "Fantasy", 2001);
 
         test.add(obj);
@@ -26,9 +26,11 @@ public class Main {
 
         year = 3;
 
-        test.add(new LibraryBook("Eragon", "P.K", "Fantasy", 2000));
+
 
         test.sortByYear();
+        test.sortByAuthor();
+        test.sortByTitle();
 
         year = 4;
     }
