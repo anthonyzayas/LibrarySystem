@@ -286,6 +286,9 @@ public class Arraybased implements Operations {
         }
     }
 
+    /**
+     * Quadratic Time Complexity
+     */
     public void sortByTitle(){
         if(size() <= 1){return;}
         for(int indexOfMin = 0; indexOfMin < size(); indexOfMin++){
