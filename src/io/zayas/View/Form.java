@@ -3,25 +3,28 @@ package io.zayas.View;
 import javax.xml.soap.Text;
 import java.awt.*;
 import java.awt.event.*;
+import io.zayas.DataStructures.Arraybased;
+import io.zayas.Objects.LibraryBook;
 
 /**
  * Created by zayas on 3/2/17.
  */
-public class Form extends Frame implements WindowListener, ActionListener{
+public class Form extends Frame implements WindowListener, ActionListener {
 
-    protected TextField title = new TextField(20);
-    protected TextField author = new TextField(20);
-    protected TextField genre = new TextField(20);
-    protected TextField date = new TextField(20);
+    TextField title = new TextField(20);
+    TextField author = new TextField(20);
+    TextField genre = new TextField(20);
+    TextField date = new TextField(20);
+    Arraybased array = new Arraybased(20);
 
     Button submit;
 
-    public Form(){
-        setLayout(new FlowLayout());
+    public Form() {
         setTitle("Library System");
         setSize(700, 700);
-        isVisible();
+        this.setVisible(true);
 
+        setLayout(new FlowLayout());
         addWindowListener(this);
         add(title);
         add(author);
@@ -32,14 +35,27 @@ public class Form extends Frame implements WindowListener, ActionListener{
         add(submit);
         submit.addActionListener(this);
 
+
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        String lbTitle = title.getText();
+        String lbAuthor = author.getText();
+        String lbGenre = genre.getText();
+        int lbYear = Integer.parseInt(date.getText());
+        array.add(new LibraryBook(lbTitle, lbAuthor, lbGenre, lbYear));
+
+        this.removeAll();
     }
 
     @Override
     public void windowOpened(WindowEvent e) {
 
+
     }
 
-    public void windowClosing(WindowEvent e){
+    public void windowClosing(WindowEvent e) {
         dispose();
         System.exit(0);
     }
@@ -69,8 +85,4 @@ public class Form extends Frame implements WindowListener, ActionListener{
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
 }
