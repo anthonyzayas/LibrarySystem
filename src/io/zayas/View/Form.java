@@ -22,8 +22,6 @@ public class Form extends Frame implements WindowListener, ActionListener {
     public Form() {
         setTitle("Library System");
         setSize(700, 700);
-        this.setVisible(true);
-
         setLayout(new FlowLayout());
         addWindowListener(this);
         add(title);
@@ -35,6 +33,7 @@ public class Form extends Frame implements WindowListener, ActionListener {
         add(submit);
         submit.addActionListener(this);
 
+        this.setVisible(true);
 
     }
     @Override
